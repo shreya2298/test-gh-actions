@@ -1,0 +1,17 @@
+name: Run commands on push
+
+on:
+  push:
+    branches:
+      - main  # Change this to match your target branch
+
+jobs:
+  run-pwd:
+    runs-on: ubuntu-latest  # Uses an Ubuntu runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Checks out your repository
+
+      - name: Print working directory
+        run: pwd  # Runs the pwd command
+
